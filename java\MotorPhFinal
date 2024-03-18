@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class MotorPhFinal {
+    public static void main(String[] args) {
+        // Load employee data and attendance data
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Load employee data and attendance data
+            Employee[] employees = loadEmployeeData("C:\\Users\\anyah\\OneDrive\\Documents\\EmployeeDataForMotorPH");
+            Attendance[] attendances = loadAttendanceData("C:\\Users\\anyah\\OneDrive\\Documents\\AttendanceDataForMotorPH");
+            
+            // Main menu loop
+            boolean exit = false;
+            while (!exit) {
+                System.out.println("MotorPhFinal Menu:");
+                System.out.println("1. Display Employee Information");
+                System.out.println("2. Calculate Hours Worked per Week");
+                System.out.println("3. Calculate Gross Salary (placeholder)");
+                System.out.println("4. Calculate Net Salary (placeholder)");
+                System.out.println("5. Exit");
+                System.out.print("Enter your choice: ");
+                int choice = scanner.nextInt();
+                
+                switch (choice) {
+                    case 1 -> displayEmployeeInformation(employees);
+                    case 2 -> calculateHoursWorkedPerWeek(employees, attendances);
+                    case 3 -> // Placeholder for calculating gross salary
+                        System.out.println("Placeholder: Calculating Gross Salary...");
+                    case 4 -> // Placeholder for calculating net salary
+                        System.out.println("Placeholder: Calculating Net Salary...");
+                    case 5 -> exit = true;
+                    default -> System.out.println("Invalid choice. Please try again.");
+                }
+            }
+        }
+    }
+
+    private static Employee[] loadEmployeeData(String employees "C:\\Users\\anyah\\OneDrive\\Documents\\EmployeeDataForMotorPH") {
+        // Load employee data from file and create Employee objects
+        // Implement this method to read employee data from a file and create Employee objects
+        return new Employee[0]; // Placeholder
+    }
+
+    private static Attendance[] loadAttendanceData(String attendance "C:\\Users\\anyah\\OneDrive\\Documents\\AttendanceDataForMotorPH") {
+        // Load attendance data from file and create Attendance objects
+        // Implement this method to read attendance data from a file and create Attendance objects
+        return new Attendance[0]; // Placeholder
+    }
+
+    private static void displayEmployeeInformation(Employee[] employees "C:\\Users\\anyah\\OneDrive\\Documents\\EmployeeDataForMotorPH") {
+        // Display employee information
+        // Implement this method to display information about each employee
+    }
+
+    private static void calculateHoursWorkedPerWeek(Employee[] employees, Attendance[] attendances) {
+        // Calculate hours worked per week
+        // Implement this method to calculate hours worked per week for each employee
+    }
+}
