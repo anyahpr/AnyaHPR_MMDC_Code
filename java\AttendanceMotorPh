@@ -1,0 +1,84 @@
+
+import java.time.LocalTime;
+import java.util.Date;
+
+public class AttendanceMotorPh {
+private int employeeNumber;
+private String lastName;
+private String firstName;
+private Date date;
+private LocalTime timeIn;
+private LocalTime timeOut;
+
+// Constructor
+public AttendanceMotorPh(int employeeNumber, String lastName, String firstName, Date date, LocalTime timeIn, LocalTime timeOut) {
+this.employeeNumber = employeeNumber;
+this.lastName = lastName;
+this.firstName = firstName;
+this.date = date;
+this.timeIn = timeIn;
+this.timeOut = timeOut;
+}
+
+// Getters and Setters
+public int getEmployeeNumber() {
+return employeeNumber;
+}
+
+public void setEmployeeNumber(int employeeNumber) {
+this.employeeNumber = employeeNumber;
+}
+
+public String getLastName() {
+return lastName;
+}
+
+public void setLastName(String lastName) {
+this.lastName = lastName;
+}
+
+public String getFirstName() {
+return firstName;
+}
+
+public void setFirstName(String firstName) {
+this.firstName = firstName;
+}
+
+public Date getDate() {
+return date;
+}
+
+public void setDate(Date date) {
+this.date = date;
+}
+
+public LocalTime getTimeIn() {
+return timeIn;
+}
+
+public void setTimeIn(LocalTime timeIn) {
+this.timeIn = timeIn;
+}
+
+public LocalTime getTimeOut() {
+return timeOut;
+}
+
+public void setTimeOut(LocalTime timeOut) {
+this.timeOut = timeOut;
+}
+
+@Override
+public String toString() {
+return "Attendance{" +
+"employeeNumber=" + employeeNumber +
+", lastName='" + lastName + '\'' +
+", firstName='" + firstName + '\'' +
+", date=" + date +
+", timeIn=" + timeIn +
+", timeOut=" + timeOut +
+'}';
+}
+
+}
