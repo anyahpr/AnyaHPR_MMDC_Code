@@ -1,0 +1,46 @@
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MotorPhHoursWorkedPerWeek {
+
+public static int calculateHoursWorked(List attendanceList, int employeeNumber, LocalDate startDate, LocalDate endDate) {
+List filteredAttendances = filterAttendance(attendanceList, employeeNumber, startDate, endDate);
+long totalHoursWorked = 0;
+
+for (Object Attendance : filteredAttendances) {
+totalHoursWorked += calculateHours(attendance.getTimeIn(), attendance.getTimeOut());
+}
+
+return (int) totalHoursWorked;
+}
+
+private static List filterAttendance(List attendanceList, int employeeNumber, LocalDate startDate, LocalDate endDate) {
+List filteredList = new ArrayList<>();
+
+for (Attendance attendance : attendanceList) {
+LocalDate attendanceDate = attendance.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+if (attendance.getEmployeeNumber() == employeeNumber && !attendanceDate.isBefore(startDate) && !attendanceDate.isAfter(endDate)) {
+filteredList.add(attendance);
+}
+}
+
+return filteredList;
+}
+
+private static long calculateHours(LocalTime timeIn, LocalTime timeOut) {
+if (timeIn == null || timeOut == null) {
+return 0;
+}
+
+Duration duration = Duration.between(timeIn, timeOut);
+long totalSeconds = duration.getSeconds();
+long totalHours = (long) Math.ceil(totalSeconds / 3600.0);
+
+return totalHours;
+}
+}
